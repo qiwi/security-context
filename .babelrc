@@ -1,0 +1,25 @@
+{
+  "presets": [
+    "flow",
+    "env"
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "transform-runtime"
+  ],
+  "comments": false,
+  "env": {
+    "production": {
+      "presets": [
+        "flow",
+        ["env", {
+          "targets": {
+            "browsers": ["last 2 versions"]
+          }
+        }],
+        "minify"
+      ]
+    }
+  }
+}
