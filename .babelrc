@@ -4,21 +4,19 @@
     "env"
   ],
   "plugins": [
-    "transform-decorators-legacy",
-    "transform-class-properties",
-    "transform-runtime"
+    "transform-class-properties"
   ],
   "comments": false,
   "env": {
     "production": {
       "presets": [
-        "flow",
         ["env", {
           "targets": {
             "browsers": ["last 2 versions"]
           }
         }],
-        "minify"
+        "minify",
+        "flow"
       ]
     }
   }
