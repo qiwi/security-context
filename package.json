@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/security-context",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Security context utils",
   "main": "src/index.js",
   "scripts": {
