@@ -11,14 +11,31 @@ import type {
 
 export const DEFAULT_STRATEGY = false
 
+/**
+ * @class PermissionEvaluator
+ */
 export default class PermissionEvaluator implements IPermissionEvaluator {
   evaluators: ?IPermissionEvaluators
+
+  /**
+   * @param {PermissionEvaluator[]} [evaluators]
+   * @returns {PermissionEvaluator}
+   * @property {PermissionEvaluator[]} [evaluators]
+   */
   constructor (evaluators?: ?IPermissionEvaluators): IPermissionEvaluator {
     this.evaluators = evaluators
 
     return this
   }
 
+  /**
+   * @method hasPermission
+   * @param {Authentication} auth
+   * @param {*} target
+   * @param {*} permission
+   * @param {string} [targetType]
+   * @return {boolean}
+   */
   hasPermission (auth: IAuth, target: ITarget, permission: IPermission, targetType?: ?ITargetType): boolean {
     if (this.evaluators) {
       const targetEvaluators: IPermissionEvaluators = this.evaluators.filter(evaluator => evaluator.supports(permission))
@@ -37,7 +54,8 @@ export default class PermissionEvaluator implements IPermissionEvaluator {
 
   /**
    * Checks if evaluator could process the permission
-   * @returns {boolean}
+   * @param {*} permission
+   * @return {boolean}
    */
   supports (permission: IPermission): boolean {
     return true
