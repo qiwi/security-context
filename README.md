@@ -2,6 +2,12 @@
 
 Basic utils for security context providing.
 
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+[![buildStatus](https://img.shields.io/travis/qiwi/security-context.svg?maxAge=3600&branch=master)](https://travis-ci.org/qiwi/security-context)
+[![coverage](https://img.shields.io/coveralls/qiwi/security-context.svg?maxAge=3600)](https://coveralls.io/github/qiwi/security-context)
+[![dependencyStatus](https://img.shields.io/david/qiwi/security-context.svg?maxAge=3600)](https://david-dm.org/qiwi/security-context)
+[![devDependencyStatus](https://img.shields.io/david/dev/qiwi/security-context.svg?maxAge=3600)](https://david-dm.org/qiwi/security-context)
+
 ##### Install
 ```bash
     npm i -S @qiwi/security-context    

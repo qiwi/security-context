@@ -45,10 +45,10 @@
     "esdoc-coverage-plugin": "^1.1.0",
     "esdoc-flow-plugin": "^1.0.0",
     "esdoc-standard-plugin": "^1.0.0",
-    "flow-bin": "^0.67.1",
+    "flow-bin": "^0.68.0",
     "flow-coverage-report": "^0.5.0",
     "flow-remove-types": "^1.2.3",
-    "jest": "^22.4.2",
+    "jest": "^22.4.3",
     "lodash": "^4.17.5",
     "standard-flow": "^1.0.0",
     "standard-version": "^4.3.0"
