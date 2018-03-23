@@ -1,7 +1,7 @@
 // @flow
 
 import type {
-  IAuth,
+  IAuthentication,
   IPermission,
   ITarget,
   ITargetType,
@@ -36,7 +36,7 @@ export default class PermissionEvaluator implements IPermissionEvaluator {
    * @param {string} [targetType]
    * @return {boolean}
    */
-  hasPermission (auth: IAuth, target: ITarget, permission: IPermission, targetType?: ?ITargetType): boolean {
+  hasPermission (auth: IAuthentication, target: ITarget, permission: IPermission, targetType?: ?ITargetType): boolean {
     if (this.evaluators) {
       const targetEvaluators: IPermissionEvaluators = this.evaluators.filter(evaluator => evaluator.supports(permission))
 

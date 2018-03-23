@@ -59,6 +59,9 @@
     "collectCoverageFrom": [
       "<rootDir>/src/**/*.js"
     ],
+    "coveragePathIgnorePatterns": [
+      "interface.js"
+    ],
     "testMatch": [
       "<rootDir>/test/**/*.js"
     ]

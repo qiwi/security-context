@@ -1,6 +1,12 @@
 // @flow
 
-import type {IDetails, IAuthentication, IAuthorities, IPrincipal} from './../interface'
+import type {
+  IDetails,
+  IAuthentication,
+  IAuthorities,
+  IPrincipal,
+  ICredentials
+} from './../interface'
 
 /**
  * @class AbstractAuthentication
@@ -11,17 +17,20 @@ export default class AbstractAuthentication implements IAuthentication {
   authorities: ?IAuthorities
   details: ?IDetails
   authenticated: boolean
+  credentials: ?ICredentials
 
   /**
    * @param {IPrincipal} principal
    * @param {IAuthorities} [authorities]
    * @param {*} [details]
+   * @param {*} [credentials]
    * @return {IAuthentication}
    * @property {IPrincipal} principal
    * @property {IAuthorities} [authorities]
    * @property {*} [details]
+   * @property {*} [credentials]
    */
-  constructor (principal: IPrincipal, authorities: ?IAuthorities, details: ?IDetails): IAuthentication {
+  constructor (principal: IPrincipal, authorities: ?IAuthorities, details: ?IDetails, credentials: ?ICredentials): IAuthentication {
     if (this.constructor === AbstractAuthentication) {
       throw new Error('abstract cannot be instantiated')
     }
@@ -30,6 +39,7 @@ export default class AbstractAuthentication implements IAuthentication {
     this.principal = principal
     this.authorities = authorities
     this.details = details
+    this.credentials = credentials
 
     return this
   }
