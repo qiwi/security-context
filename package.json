@@ -16,7 +16,8 @@
     "release": "npm test && npm run build && standard-version && npm run postversion",
     "postversion": "npm run push && npm publish",
     "push": "git push --follow-tags origin master",
-    "doc": "esdoc"
+    "doc": "esdoc",
+    "docs": "npm run doc"
   },
   "repository": {
     "type": "git",

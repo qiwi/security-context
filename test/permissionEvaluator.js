@@ -1,5 +1,7 @@
 import PermissionEvaluator, {DEFAULT_STRATEGY} from '../src/permissionEvaluator'
-import Authentication from '../src/authentication'
+import {AbstractAuthentication} from '../src/authentication'
+
+class Authentication extends AbstractAuthentication {}
 
 describe('permissionEvaluator', () => {
   describe('construtor', () => {

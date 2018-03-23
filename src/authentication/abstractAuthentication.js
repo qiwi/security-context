@@ -1,11 +1,12 @@
 // @flow
 
-import type {IDetails, IAuthentication, IAuthorities, IPrincipal} from './interface'
+import type {IDetails, IAuthentication, IAuthorities, IPrincipal} from './../interface'
 
 /**
- * @class Authentication
+ * @class AbstractAuthentication
+ * @abstract
  */
-export default class Authentication implements IAuthentication {
+export default class AbstractAuthentication implements IAuthentication {
   principal: IPrincipal
   authorities: ?IAuthorities
   details: ?IDetails
@@ -21,6 +22,10 @@ export default class Authentication implements IAuthentication {
    * @property {*} [details]
    */
   constructor (principal: IPrincipal, authorities: ?IAuthorities, details: ?IDetails): IAuthentication {
+    if (this.constructor === AbstractAuthentication) {
+      throw new Error('abstract cannot be instantiated')
+    }
+
     this.authenticated = false
     this.principal = principal
     this.authorities = authorities
