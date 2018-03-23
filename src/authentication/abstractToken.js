@@ -29,8 +29,8 @@ export default class AbstractToken extends AbstractAuthentication implements ITo
 
     return this
   }
-  static TYPE = TYPE
   get type (): string {
     return this.constructor.TYPE
   }
+  static TYPE = TYPE
 }

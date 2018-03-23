@@ -7,6 +7,9 @@
     "transform-class-properties"
   ],
   "comments": false,
+  "ignore": [
+    "interface.js"
+  ],
   "env": {
     "production": {
       "presets": [
@@ -17,6 +20,9 @@
         }],
         "minify",
         "flow"
+      ],
+      "plugins": [
+        "transform-class-properties"
       ]
     }
   }
