@@ -13,21 +13,34 @@ Basic utils for security context providing.
     npm i -S @qiwi/security-context    
 ```
 
+##### Contracts
+Inspired by [Spring](https://spring.io/)
+* Authentication — basic auth iface
+* *Token — custom auth impl
+* Authority - represents an authority granted to an Authentication object.
+* Role — basic authority type
+* Permission — a representation of the permission object as supplied by the expression system
+
 ##### Usage concept
 ```javascript
-    import {Role, Authentication, PermissionEvaluator} from '@qiwi/security-context'
+    import {Role, AbstractToken, PermissionEvaluator} from '@qiwi/security-context'
 
     // Create role as basic Authority
     const admin = new Role('admin')
     const operator = new Role('operator')
+    
+    // Specify custom token logic
+    class CustomToken extends AbstractToken {
+      //...
+    }
     
     // Configure your evaluator
     class CustomEvaluator extends PermissionEvaluator {
       constructor() {
         super()
       }
-      hasPermission(auth, target, permission) {
-        const roles = auth.authorities
+      hasPermission(token, target, permission) {
+        const roles = token.authorities
         
         if (roles.contains(admin)) {
           return true
@@ -35,7 +48,7 @@ Basic utils for security context providing.
         
         if (roles.contains(operator)) {
           if (permission === 'owner') {
-            if (target.owner_id === auth.principal.id) {
+            if (target.owner_id === token.principal.id) {
               return true
             }
           }
@@ -53,12 +66,12 @@ Basic utils for security context providing.
     fetch({/*...*/})
       .then(res => {
         const data = res.json()
-        const auth = new Authentication(
+        const token = new CustomToken(
           user,
           data.roles.map(v => new Role(v)),
           data.details
         )
-        auth.authenticated = true
+        token.authenticated = true
 
       })
       .catch(e => {
@@ -67,7 +80,7 @@ Basic utils for security context providing.
       
     // Then pass auth to context and resolve permission where it's needed
     const doSomething = (target, ...args) => {
-      if (evaluator.hasPermission(auth, target, 'owner')) {
+      if (evaluator.hasPermission(token, target, 'owner')) {
         // ...
       }
     }
