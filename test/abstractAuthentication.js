@@ -1,6 +1,6 @@
 import {AbstractAuthentication} from '../src/authentication'
 
-describe('authentication', () => {
+describe('abstractAuthentication', () => {
   describe('constructor', () => {
     it('is abstract', () => {
       expect(() => new AbstractAuthentication()).toThrow('abstract cannot be instantiated')

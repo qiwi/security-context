@@ -2,7 +2,7 @@
 import type {IToken, IAny} from '../interface'
 import AbstractAuthentication from './abstractAuthentication'
 
-const TYPE = 'ABSTRACT'
+const TYPE = 'ABSTRACT_TOKEN'
 
 export default class AbstractToken extends AbstractAuthentication implements IToken {
   constructor (...args: IAny) {
