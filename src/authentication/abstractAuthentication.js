@@ -14,23 +14,23 @@ import type {
  */
 export default class AbstractAuthentication implements IAuthentication {
   principal: IPrincipal
+  credentials: ?ICredentials
   authorities: ?IAuthorities
   details: ?IDetails
   authenticated: boolean
-  credentials: ?ICredentials
 
   /**
    * @param {IPrincipal} principal
+   * @param {*} [credentials]
    * @param {IAuthorities} [authorities]
    * @param {*} [details]
-   * @param {*} [credentials]
    * @return {IAuthentication}
    * @property {IPrincipal} principal
+   * @property {*} [credentials]
    * @property {IAuthorities} [authorities]
    * @property {*} [details]
-   * @property {*} [credentials]
    */
-  constructor (principal: IPrincipal, authorities: ?IAuthorities, details: ?IDetails, credentials: ?ICredentials): IAuthentication {
+  constructor (principal: IPrincipal, credentials: ?ICredentials, authorities: ?IAuthorities, details: ?IDetails): IAuthentication {
     if (this.constructor === AbstractAuthentication) {
       throw new Error('abstract cannot be instantiated')
     }

@@ -789,15 +789,6 @@
       "integrity": "sha1-TDqyCiryaqIM0lmVw5jE63AxDI0=",
       "dev": true
     },
-    "babel-plugin-syntax-jsx": {
-      "version": "6.8.0",
-      "resolved": "https://registry.npmjs.org/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.8.0.tgz",
-      "integrity": "sha1-HFQwpIilBGpHyNoa1jHxav6NERo=",
-      "dev": true,
-      "requires": {
-        "babel-runtime": "6.26.0"
-      }
-    },
     "babel-plugin-syntax-object-rest-spread": {
       "version": "6.13.0",
       "resolved": "https://registry.npmjs.org/babel-plugin-syntax-object-rest-spread/-/babel-plugin-syntax-object-rest-spread-6.13.0.tgz",
@@ -2992,6 +2983,12 @@
       "integrity": "sha1-OGmGnNf4eJH5cmJXh2laKZrs5Fw=",
       "dev": true
     },
+    "esdoc-ecmascript-proposal-plugin": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/esdoc-ecmascript-proposal-plugin/-/esdoc-ecmascript-proposal-plugin-1.0.0.tgz",
+      "integrity": "sha1-OQ3FZWuoooMOOdujVw15E43y/9k=",
+      "dev": true
+    },
     "esdoc-external-ecmascript-plugin": {
       "version": "1.0.0",
       "resolved": "https://registry.npmjs.org/esdoc-external-ecmascript-plugin/-/esdoc-external-ecmascript-plugin-1.0.0.tgz",
@@ -3001,78 +2998,11 @@
         "fs-extra": "1.0.0"
       }
     },
-    "esdoc-flow-plugin": {
-      "version": "1.0.0",
-      "resolved": "https://registry.npmjs.org/esdoc-flow-plugin/-/esdoc-flow-plugin-1.0.0.tgz",
-      "integrity": "sha1-vaH0/K5MKQv3tXbz5Cq4yBo5ddM=",
-      "dev": true,
-      "requires": {
-        "babel-core": "6.9.1",
-        "babel-plugin-syntax-jsx": "6.8.0",
-        "babel-plugin-transform-flow-strip-types": "6.8.0"
-      },
-      "dependencies": {
-        "babel-core": {
-          "version": "6.9.1",
-          "resolved": "https://registry.npmjs.org/babel-core/-/babel-core-6.9.1.tgz",
-          "integrity": "sha1-SNRx7r9N5GngqUL+RW3MlLGL6A0=",
-          "dev": true,
-          "requires": {
-            "babel-code-frame": "6.26.0",
-            "babel-generator": "6.26.1",
-            "babel-helpers": "6.24.1",
-            "babel-messages": "6.23.0",
-            "babel-register": "6.26.0",
-            "babel-runtime": "6.26.0",
-            "babel-template": "6.26.0",
-            "babel-traverse": "6.26.0",
-            "babel-types": "6.26.0",
-            "babylon": "6.18.0",
-            "convert-source-map": "1.5.1",
-            "debug": "2.6.9",
-            "json5": "0.4.0",
-            "lodash": "4.17.5",
-            "minimatch": "2.0.10",
-            "path-exists": "1.0.0",
-            "path-is-absolute": "1.0.1",
-            "private": "0.1.8",
-            "shebang-regex": "1.0.0",
-            "slash": "1.0.0",
-            "source-map": "0.5.7"
-          }
-        },
-        "babel-plugin-transform-flow-strip-types": {
-          "version": "6.8.0",
-          "resolved": "https://registry.npmjs.org/babel-plugin-transform-flow-strip-types/-/babel-plugin-transform-flow-strip-types-6.8.0.tgz",
-          "integrity": "sha1-I1HYXjpSFS4aVdPwiuY14h7OF6A=",
-          "dev": true,
-          "requires": {
-            "babel-plugin-syntax-flow": "6.18.0",
-            "babel-runtime": "6.26.0"
-          }
-        },
-        "json5": {
-          "version": "0.4.0",
-          "resolved": "https://registry.npmjs.org/json5/-/json5-0.4.0.tgz",
-          "integrity": "sha1-BUNS5MTIDIbAkjh31EneF2pzLI0=",
-          "dev": true
-        },
-        "minimatch": {
-          "version": "2.0.10",
-          "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-2.0.10.tgz",
-          "integrity": "sha1-jQh8OcazjAAbl/ynzm0OHoCvusc=",
-          "dev": true,
-          "requires": {
-            "brace-expansion": "1.1.11"
-          }
-        },
-        "path-exists": {
-          "version": "1.0.0",
-          "resolved": "https://registry.npmjs.org/path-exists/-/path-exists-1.0.0.tgz",
-          "integrity": "sha1-1aiZjrce83p0w06w2eum6HjuoIE=",
-          "dev": true
-        }
-      }
+    "esdoc-flow-type-plugin": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/esdoc-flow-type-plugin/-/esdoc-flow-type-plugin-1.0.1.tgz",
+      "integrity": "sha1-CBOVHGhopyi+a6rfAnjl0HCFFHk=",
+      "dev": true
     },
     "esdoc-integrate-manual-plugin": {
       "version": "1.0.0",

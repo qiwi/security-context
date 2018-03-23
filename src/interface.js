@@ -25,12 +25,12 @@ export type ITargetType = string
 export type IDetails = IAny
 
 export interface IAuthentication {
-  constructor(principal: IPrincipal, authorities: ?IAuthorities, details: ?IDetails, credentials: ?ICredentials): IAuthentication;
+  constructor(principal: IPrincipal, credentials: ?ICredentials, authorities: ?IAuthorities, details: ?IDetails): IAuthentication;
   authenticated: boolean;
   principal: IPrincipal;
+  credentials?: ?ICredentials;
   authorities: ?IAuthorities;
   details: ?IDetails;
-  credentials?: ?ICredentials;
 }
 
 export interface IToken extends IAuthentication {
@@ -44,13 +44,13 @@ export interface IToken extends IAuthentication {
   get type(): string;
 }
 
-export interface IUserPasswordToken extends IToken {
+export interface IUsernamePasswordToken extends IToken {
   constructor(
     principal: IPrincipal,
+    credentials: IUserPasswordCredentials,
     authorities: ?IAuthorities,
-    details: ?IDetails,
-    credentials: ?IUserPasswordCredentials
-  ): IUserPasswordToken;
+    details: ?IDetails
+  ): IUsernamePasswordToken;
 }
 
 export interface IPermissionEvaluator {

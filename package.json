@@ -4,7 +4,7 @@
   "description": "Security context utils",
   "main": "src/index.js",
   "scripts": {
-    "jest": "jest",
+    "jest": "jest -w 4",
     "lint": "standard-flow src/**/*.js test/**/*.js",
     "flow": "flow",
     "test": "npm run lint && npm run flow && npm run jest",
@@ -44,7 +44,8 @@
     "coveralls": "^3.0.0",
     "esdoc": "^1.0.4",
     "esdoc-coverage-plugin": "^1.1.0",
-    "esdoc-flow-plugin": "^1.0.0",
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "esdoc-flow-type-plugin": "^1.0.1",
     "esdoc-standard-plugin": "^1.0.0",
     "flow-bin": "^0.68.0",
     "flow-coverage-report": "^0.5.0",
@@ -56,11 +57,11 @@
   },
   "jest": {
     "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/interface.js"
+    ],
     "collectCoverageFrom": [
       "<rootDir>/src/**/*.js"
-    ],
-    "coveragePathIgnorePatterns": [
-      "interface.js"
     ],
     "testMatch": [
       "<rootDir>/test/**/*.js"

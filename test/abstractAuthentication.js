@@ -10,13 +10,15 @@ describe('abstractAuthentication', () => {
       class Auth extends AbstractAuthentication {}
 
       const principal = {login: 'foo'}
+      const credentials = {}
       const authorities = []
       const details = {}
 
-      const auth = new Auth(principal, authorities, details)
+      const auth = new Auth(principal, credentials, authorities, details)
 
       expect(auth).toBeInstanceOf(AbstractAuthentication)
       expect(auth.principal).toBe(principal)
+      expect(auth.credentials).toBe(credentials)
       expect(auth.authorities).toBe(authorities)
       expect(auth.details).toBe(details)
       expect(auth.authenticated).toBeFalsy()

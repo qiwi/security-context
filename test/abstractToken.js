@@ -12,13 +12,15 @@ describe('abstractToken', () => {
       }
 
       const principal = {login: 'foo'}
+      const credentials = {}
       const authorities = []
       const details = {}
 
-      const token = new Token(principal, authorities, details)
+      const token = new Token(principal, credentials, authorities, details)
 
       expect(token).toBeInstanceOf(AbstractToken)
       expect(token.principal).toBe(principal)
+      expect(token.credentials).toBe(credentials)
       expect(token.authorities).toBe(authorities)
       expect(token.details).toBe(details)
       expect(token.authenticated).toBeFalsy()

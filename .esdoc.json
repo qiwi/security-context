@@ -6,8 +6,9 @@
 
   ],
   "plugins": [
-    {"name": "esdoc-flow-plugin"},
+    {"name": "esdoc-flow-type-plugin"},
     {"name": "esdoc-standard-plugin"},
+    {"name": "esdoc-ecmascript-proposal-plugin", "option": {"all": true}},
     {
       "name": "esdoc-coverage-plugin",
       "option": {

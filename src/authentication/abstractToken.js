@@ -4,7 +4,22 @@ import AbstractAuthentication from './abstractAuthentication'
 
 const TYPE = 'ABSTRACT_TOKEN'
 
+/**
+ * @class AbstractToken
+ * @abstract
+ */
 export default class AbstractToken extends AbstractAuthentication implements IToken {
+  /**
+   * @param {IPrincipal} principal
+   * @param {*} [credentials]
+   * @param {IAuthorities} [authorities]
+   * @param {*} [details]
+   * @return {IAuthentication}
+   * @property {IPrincipal} principal
+   * @property {*} [credentials]
+   * @property {IAuthorities} [authorities]
+   * @property {*} [details]
+   */
   constructor (...args: IAny) {
     super(...args)
 
