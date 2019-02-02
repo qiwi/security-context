@@ -1,28 +1,37 @@
 {
-  "presets": [
-    "flow",
-    "env"
-  ],
   "plugins": [
-    "transform-class-properties"
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-proposal-class-properties"
   ],
   "comments": false,
   "ignore": [
     "interface.js"
   ],
+
   "env": {
+    "test": {
+      "presets": [
+        "@babel/preset-flow",
+        "@babel/preset-env"
+      ],
+      "plugins": [
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-proposal-class-properties"
+      ]
+    },
     "production": {
       "presets": [
-        ["env", {
+        ["@babel/preset-env", {
           "targets": {
             "browsers": ["last 2 versions"]
           }
         }],
-        "minify",
-        "flow"
+        "@babel/preset-flow",
+        "minify"
       ],
       "plugins": [
-        "transform-class-properties"
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-proposal-class-properties"
       ]
     }
   }
