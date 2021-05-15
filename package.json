@@ -58,7 +58,7 @@
     "flow-bin": "^0.92.0",
     "flow-coverage-report": "^0.6.1",
     "flow-remove-types": "^1.2.3",
-    "jest": "^24.0.0",
+    "jest": "24.9.0",
     "lodash": "^4.17.11",
     "standard-flow": "^1.0.0"
   },
